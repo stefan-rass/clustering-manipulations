@@ -2,9 +2,24 @@
 ## Metricizing the Euclidean Space towards Desired Distance Relations in Point Clouds
 to appear in: IEEE Transactions on Information Forensics and Security
 
-Recommended citation: tba.
+Recommended citation: S. Rass, S. König, S. Ahmad, and M. Goman, “Metricizing the Euclidean Space Toward Desired Distance Relations in Point Clouds,” IEEE Trans. Inf. Forensics Secur., vol. 19, pp. 7304–7319, 2024, doi: 10.1109/TIFS.2024.3420246
 
-BibTeX: tba.
+BibTeX: 
+
+@article{rass_metricizing_2024,
+	title = {Metricizing the {Euclidean} {Space} {Toward} {Desired} {Distance} {Relations} in {Point} {Clouds}},
+	volume = {19},
+	copyright = {https://creativecommons.org/licenses/by/4.0/legalcode},
+	issn = {1556-6013, 1556-6021},
+	url = {https://ieeexplore.ieee.org/document/10574843/},
+	doi = {10.1109/TIFS.2024.3420246},
+	urldate = {2024-08-05},
+	journal = {IEEE Transactions on Information Forensics and Security},
+	author = {Rass, Stefan and König, Sandra and Ahmad, Shahzad and Goman, Maksim},
+	year = {2024},
+	pages = {7304--7319},
+}
+
 
 ---
 

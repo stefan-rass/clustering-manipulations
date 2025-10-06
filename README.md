@@ -86,3 +86,5 @@ to let the manipulation run with the desired classifications. We emphasize that 
 
 ## Remarks and Updates
 Theorem 3 in the paper needs the unstated addtional hypothesis that the input points from $Y$ are all linearly independent. This is easy to accomplish a priori, by adding pseudo-features that are drawn from an absolutely continuous distribution (alluding to Lemma 1 whose proof argument also shows that the resulting vectors will be linearly independent). Alternatively, leaving the theorem in its hypothesis and claim unchanged, one can adapt the proof as follows: we create the noisy vectors as $z_{i,j}=y'_i+f(y_i,y_j)$, i.e., adding an $h$-dimensional noise vector to the canonic embedding $y'_i=(y_i,0)\in\mathbb{R}^h$ instead of just appending the noise to the original data. The proof, literally, remains intact upon changing the argument accordingly, and *likewise remains Theorem 3 correct as stated, under this change to its proof.*
+
+We thank Mr. Enes Sovtic for pointing out this issue.

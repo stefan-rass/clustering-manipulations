@@ -1,7 +1,12 @@
 ##Experiment: Manipulation of DBSCAN with the MNIST Dataset prepared in the R scripts
-##Conducted on: April 3rd, 2024
+##Conducted on: October 2nd, 2025
 ##Description: see the paper, version of October 6th, 2022
-##  April 2nd, 2024: bugfix in the loops (line 56 and others)
+##Changes:
+##  * April 2nd, 2024: bugfix in the loops (line 56 and others)
+##  * October 2nd, 2025: bugfix on the noise injection in lines 72 and 77.
+##       adapted the noise injection during the mapping of y's into the high-dimensional space, to make the method also work when there is a rank deficiency in the feature vector matrix
+##       Status of the change: works as intended
+
 ##Result: Successful
 
 clear all
@@ -67,11 +72,13 @@ for i = 1:size(y)(1)  % iterate over all rows of y
     k = k + 1;
     % pick a fresh point in the proximity of the given data point to compute the difference
     rand("seed", prod(y(i,:))*sum(y(j,:)))  ## let the seed depend on *both* y(i) and y(j)
-    zi = [y(i,:), s * rand([1 ex])];  ## now, the sequence is pseudorandom
+    #zi = [y(i,:), s * rand([1 ex])];  ## now, the sequence is pseudorandom
+    zi = s * rand([1 h]) + y_prime(i, :);  ## change over the original TIFS paper; will in all cases (almost surely) accomplish linear independence (as intended and stated in the original work)
     assert(norm(y_prime(i,:) - zi, 2) <= epsilon)   % y_prime is just y with zero-padding for equal dimensions
 
     rand("seed", prod(y(j,:))*sum(y(i,:)))  ## let the seed depend on *both* y(j) and y(i)
-    zj = [y(j,:), s * rand([1 ex])];
+    #zj = [y(j,:), s * rand([1 ex])];
+    zj = s * rand([1 h]) + y_prime(j, :);  ## change over the original TIFS paper; will in all cases (almost surely) accomplish linear independence (as intended and stated in the original work)
     assert(norm(y_prime(j,:) - zj, 2) <= epsilon)
     M(:,k) = (zi - zj)';
 
